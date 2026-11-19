@@ -1,18 +1,30 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
 /* Common styles */
-@import url('./reset.css');
-@import url('./base.css');
-@import url('./container.css');
-@import url('./animations.css');
+@import url('base/reset.css');
+@import url('base/variables.css');
+@import url('base/base.css');
+@import url('utils/container.css');
+@import url('utils/animations.css');
+@import url('utils/loader.css');
+@import 'izitoast/dist/css/iziToast.min.css';
+@import url('utils/iziToast-custom.css');
+
+@import url('components/button.css');
+@import url('components/modal.css');
 
 /* Sections style */
-@import url('./header.css');
-@import url('./vite-promo.css');
-@import url('./badges.css');
-@import url('./back-link.css');
-@import url('./footer.css');
+@import url('sections/header.css');
+
+@import url('sections/hero.css');
+@import url('sections/books.css');
+@import url('sections/feedbacks.css');
+@import url('sections/events.css');
+@import url('sections/article.css');
+@import url('sections/location.css');
+
+@import url('sections/footer.css');
+
+/* Section-modals style */
+@import url('sections/book-modal.css');
+@import url('sections/contact-modal.css');
+
+@import url('utils/utils.css');
