@@ -1,6 +1,200 @@
-<section class="hero">
+<section class="hero" id="hero">
   <div class="container">
-    <h1>hero</h1>
+    <div class="hero-slider swiper">
+      <ul class="hero-list swiper-wrapper">
+        <li class="hero-slide swiper-slide">
+          <picture class="hero-picture">
+            <source
+              media="(min-width: 1440px)"
+              srcset="
+                ./images/hero/hero-1-desk-1x.webp 1x,
+                ./images/hero/hero-1-desk-2x.webp 2x
+              "
+              type="image/webp"
+            />
+            <source
+              media="(min-width: 768px)"
+              srcset="
+                ./images/hero/hero-1-tab-1x.webp 1x,
+                ./images/hero/hero-1-tab-2x.webp 2x
+              "
+              type="image/webp"
+            />
+            <source
+              srcset="
+                ./images/hero/hero-1-mob-1x.webp 1x,
+                ./images/hero/hero-1-mob-2x.webp 2x
+              "
+              type="image/webp"
+            />
+            <img
+              class="hero-img"
+              src="./images/hero/hero-1-desk-1x.jpg"
+              alt="Open book with a cozy knit blanket and warm mug"
+              width="1312"
+              height="395"
+              fetchpriority="high"
+            />
+          </picture>
+          <div class="hero-slide-content">
+            <p class="hero-slide-title hero-slide-title--narrow">
+              Get 10% off your first order
+            </p>
+            <a class="hero-cta-link" href="#books">Shop Now!</a>
+          </div>
+        </li>
 
+        <li class="hero-slide hero-slide--overlay-40 swiper-slide">
+          <picture class="hero-picture">
+            <source
+              media="(min-width: 1440px)"
+              srcset="
+                ./images/hero/hero-2-desk-1x.webp 1x,
+                ./images/hero/hero-2-desk-2x.webp 2x
+              "
+              type="image/webp"
+            />
+            <source
+              media="(min-width: 768px)"
+              srcset="
+                ./images/hero/hero-2-tab-1x.webp 1x,
+                ./images/hero/hero-2-tab-2x.webp 2x
+              "
+              type="image/webp"
+            />
+            <source
+              srcset="
+                ./images/hero/hero-2-mob-1x.webp 1x,
+                ./images/hero/hero-2-mob-2x.webp 2x
+              "
+              type="image/webp"
+            />
+            <img
+              class="hero-img"
+              src="./images/hero/hero-2-desk-1x.jpg"
+              alt="Curated stack of books on a warm wooden surface"
+              width="1312"
+              height="395"
+              loading="lazy"
+            />
+          </picture>
+          <div class="hero-slide-content">
+            <p class="hero-slide-title hero-slide-title--narrow">
+              Save 15% on some books
+            </p>
+            <a class="hero-cta-link" href="#books">Shop Now!</a>
+          </div>
+        </li>
+
+        <li class="hero-slide hero-slide--overlay-20 swiper-slide">
+          <picture class="hero-picture">
+            <source
+              media="(min-width: 1440px)"
+              srcset="
+                ./images/hero/hero-3-desk-1x.webp 1x,
+                ./images/hero/hero-3-desk-2x.webp 2x
+              "
+              type="image/webp"
+            />
+            <source
+              media="(min-width: 768px)"
+              srcset="
+                ./images/hero/hero-3-tab-1x.webp 1x,
+                ./images/hero/hero-3-tab-2x.webp 2x
+              "
+              type="image/webp"
+            />
+            <source
+              srcset="
+                ./images/hero/hero-3-mob-1x.webp 1x,
+                ./images/hero/hero-3-mob-2x.webp 2x
+              "
+              type="image/webp"
+            />
+            <img
+              class="hero-img"
+              src="./images/hero/hero-3-desk-1x.jpg"
+              alt="Summer sale collection of popular books"
+              width="1312"
+              height="395"
+              loading="lazy"
+            />
+          </picture>
+          <div class="hero-slide-content">
+            <p class="hero-slide-title">
+              Summer Sale!<br />Up to -40% discounts
+            </p>
+            <a class="hero-cta-link" href="#books">Shop Now!</a>
+          </div>
+        </li>
+
+        <li class="hero-slide hero-slide--overlay-30 swiper-slide">
+          <picture class="hero-picture">
+            <source
+              media="(min-width: 1440px)"
+              srcset="
+                ./images/hero/hero-4-desk-1x.webp 1x,
+                ./images/hero/hero-4-desk-2x.webp 2x
+              "
+              type="image/webp"
+            />
+            <source
+              media="(min-width: 768px)"
+              srcset="
+                ./images/hero/hero-4-tab-1x.webp 1x,
+                ./images/hero/hero-4-tab-2x.webp 2x
+              "
+              type="image/webp"
+            />
+            <source
+              srcset="
+                ./images/hero/hero-4-mob-1x.webp 1x,
+                ./images/hero/hero-4-mob-2x.webp 2x
+              "
+              type="image/webp"
+            />
+            <img
+              class="hero-img"
+              src="./images/hero/hero-4-desk-1x.jpg"
+              alt="Spring bestsellers featured at Booksy"
+              width="1312"
+              height="395"
+              loading="lazy"
+            />
+          </picture>
+          <div class="hero-slide-content">
+            <p class="hero-slide-title">
+              Last chance to buy our spring bestsellers
+            </p>
+            <a class="hero-cta-link" href="#books">Shop Now!</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="hero-bottom">
+      <h1 class="hero-title">Discover Your Next Great Read Today!</h1>
+      <div class="hero-controls">
+        <button
+          class="hero-slider-btn hero-slider-btn--prev"
+          type="button"
+          aria-label="Previous slide"
+          disabled
+        >
+          <svg class="hero-slider-icon" width="24" height="24" aria-hidden="true">
+            <use href="./images/icons.svg#icon-arrow-left"></use>
+          </svg>
+        </button>
+        <button
+          class="hero-slider-btn hero-slider-btn--next"
+          type="button"
+          aria-label="Next slide"
+        >
+          <svg class="hero-slider-icon" width="24" height="24" aria-hidden="true">
+            <use href="./images/icons.svg#icon-arrow-right"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
   </div>
 </section>
