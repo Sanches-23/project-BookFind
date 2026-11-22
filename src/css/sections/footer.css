@@ -1,13 +1,8 @@
 .footer {
-  --footer-bg: #f2994a;
-  --footer-text: #000000;
-  --footer-accent: #000000;
-  --footer-line: rgba(255, 255, 255, 0.3);
-
   padding-top: 80px;
   padding-bottom: 80px;
-  background-color: var(--footer-bg);
-  color: var(--footer-text);
+  background-color: var(--color-accent-light);
+  color: var(--color-text);
 }
 
 .footer-top {
@@ -25,9 +20,19 @@
 }
 
 .footer-logo {
-  display: block;
-  width: 84px;
+  display: flex;
+  align-items: center;
   height: 36px;
+  transition: opacity var(--transition);
+}
+
+.footer-logo:hover,
+.footer-logo:focus {
+  opacity: 0.7;
+}
+
+.footer-logo-icon {
+  fill: currentColor;
 }
 
 .footer-nav-list {
@@ -68,7 +73,7 @@
   padding: 0 16px;
   border: 1px solid transparent;
   border-radius: 4px;
-  background-color: rgba(0, 0, 0, 0.06);
+  background-color: var(--color-input-bg);
   color: inherit;
   font: inherit;
   outline: none;
@@ -81,26 +86,37 @@
 }
 
 .footer-form-input:focus {
-  border-color: var(--footer-accent);
+  border-color: var(--color-text);
+}
+
+.footer-form-input:user-invalid {
+  border-color: var(--color-error);
 }
 
 .footer-form-btn {
   flex-shrink: 0;
   height: 48px;
   padding: 0 24px;
-  border: 1px solid var(--footer-accent);
+  border: 1px solid var(--color-text);
   border-radius: 4px;
   background-color: transparent;
   color: inherit;
-  cursor: pointer;
   font: inherit;
-  font-weight: 500;
-  transition: opacity var(--transition);
+  cursor: pointer;
+  transition:
+    background-color var(--transition),
+    color var(--transition);
 }
 
 .footer-form-btn:hover,
 .footer-form-btn:focus {
-  opacity: 0.8;
+  background-color: var(--color-text);
+  color: var(--color-bg);
+}
+
+.footer-form-btn:active {
+  background-color: var(--color-btn-active);
+  color: var(--color-text);
 }
 
 .footer-form-note {
@@ -110,7 +126,7 @@
 
 .footer-bottom {
   padding-top: 32px;
-  border-top: 1px solid var(--footer-line);
+  border-top: 1px solid color-mix(in srgb, var(--white) 20%, transparent);
 }
 
 .footer-copyright {
@@ -127,7 +143,6 @@
 
   .footer-nav-list {
     flex-direction: row;
-    gap: 32px;
   }
 
   .footer-form-input {
@@ -148,10 +163,6 @@
   }
 
   .footer-subscribe {
-    width: 400px;
+    width: 404px;
   }
 }
-
-
-
-
