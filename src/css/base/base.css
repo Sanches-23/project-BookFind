@@ -9,7 +9,10 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-
+html {
+  scroll-behavior: smooth;
+}
+/* smooth-scroll при нитисканні на якірні посилання */
 body {
   display: flex;
   flex-direction: column;
@@ -21,4 +24,31 @@ body {
 
 main {
   flex-grow: 1;
+  padding-top: 64px;
 }
+/* падінг в main щоб секція не провалювалась під хедер */
+
+@media (min-width: 768px) {
+  main {
+    padding-top: 72px;
+  }
+}
+/* медіазапит на більші екрани для коригування позиції вмісту під хедером */
+
+#books,
+#feedbacks,
+#events,
+#location {
+  scroll-margin-top: 64px;
+}
+
+@media (min-width: 768px) {
+  #books,
+  #feedbacks,
+  #events,
+  #location {
+    scroll-margin-top: 72px;
+  }
+}
+/* Note: звернення через селектор # так як перехід за посиланнями по id + налаштовано під різні екрани,
+без #home бо він висить на секції main , а в ньогго налаштований паддінг тут*/
