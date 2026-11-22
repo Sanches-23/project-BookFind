@@ -7,7 +7,7 @@ export const ENDPOINTS = {
   BOOKS: '/books/'
 };
 
-export const DESKTOP_QUERY = '(min-width: 1440px)';
+export const TABLET_QUERY = '(min-width: 768px)';
 
 export const BOOKS_PER_LOAD = 4;
 export const BOOKS_PER_PAGE = {

@@ -1,6 +1,6 @@
 import { getTopBooks, getBooksByCategory, getCategories } from './books-api.js';
 import { loadMoreBooks, refs, renderBooks, renderCategories, toggleLoadMore, updateCounter } from './books-render.js';
-import { BOOKS_PER_LOAD, BOOKS_PER_PAGE, DESKTOP_QUERY } from './constants.js';
+import { BOOKS_PER_LOAD, BOOKS_PER_PAGE, TABLET_QUERY } from './constants.js';
 import iziToast from 'izitoast';
 
 const ALL_CATEGORIES = 'All categories';
@@ -8,7 +8,7 @@ let currentBooks = [];
 let shownCount = 0;
 
 function getBooksLimit() {
-  return window.matchMedia(DESKTOP_QUERY).matches
+  return window.matchMedia(TABLET_QUERY).matches
     ? BOOKS_PER_PAGE.DESKTOP
     : BOOKS_PER_PAGE.MOBILE;
 }
