@@ -1,8 +1,22 @@
 :root {
   --font-main: 'Rubik', sans-serif;
+  --color-bg: #fceee6;
+  --color-text: #0b0500;
+
+  --color-btn-active: #dad9d8;
+  --color-btn-active-dark: #5a2502;
+
+  --color-accent: #e15d05;
+  --color-accent-light: #ea8d50;
+  --color-accent-dark: #b44a04;
+
+  --color-error: #ad0000;
 
   --white: #ffffff;
   --black: #000000;
+
+  /*приклад використання кольорів при необхідності додати прозорий*/
+  --color-input-bg: color-mix(in srgb, var(--color-text) 5%, transparent);
 
   --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }

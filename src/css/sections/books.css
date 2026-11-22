@@ -2,8 +2,13 @@
 
 }
 
+.categories-btn {
+  width: 100%;
+  text-align: left;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 
-
-
-
-
+  text-decoration: underline; /**/
+}
