@@ -2,10 +2,6 @@
   display: none;
 }
 
-/*
-може ще щось таке пригодиться допоміжне
-*/
-
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -15,6 +11,13 @@
   overflow: hidden;
   border: 0;
   clip: rect(0 0 0 0);
+  clip-path: inset(50%);
   white-space: nowrap;
 }
+
+/*
+може ще щось таке пригодиться допоміжне
+*/
+
+
 
