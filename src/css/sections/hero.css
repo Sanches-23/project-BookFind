@@ -1,5 +1,5 @@
 .hero {
-  background-color: #fceee6;
+  background-color: var(--bg-main);
   padding-bottom: 32px;
 }
 
@@ -36,15 +36,15 @@
 }
 
 .hero-slide--overlay-20::after {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: var(--overlay-20);
 }
 
 .hero-slide--overlay-30::after {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: var(--overlay-30);
 }
 
 .hero-slide--overlay-40::after {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: var(--overlay-40);
 }
 
 .hero-picture {
@@ -91,9 +91,9 @@
   min-width: 117px;
   height: 24px;
   padding: 4px 12px;
-  border: 1px solid #e15d05;
+  border: 1px solid var(--accent-color);
   border-radius: 4px;
-  background-color: #e15d05;
+  background-color: var(--accent-color);
   font-size: 10px;
   font-weight: 400;
   line-height: 1.5;
@@ -105,14 +105,14 @@
 
 .hero-cta-link:hover,
 .hero-cta-link:focus-visible {
-  background-color: #0b0500;
-  border-color: #0b0500;
+  background-color: var(--text-main);
+  border-color: var(--text-main);
   color: var(--white);
 }
 
 .hero-cta-link:active {
-  background-color: #5a2502;
-  border-color: #5a2502;
+  background-color: var(--accent-dark);
+  border-color: var(--accent-dark);
   color: var(--white);
 }
 
@@ -128,7 +128,7 @@
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.01em;
-  color: #0b0500;
+  color: var(--text-main);
 }
 
 .hero-controls {
@@ -146,8 +146,8 @@
   width: 48px;
   height: 48px;
   padding: 12px;
-  border: 1px solid rgba(11, 5, 0, 0.15);
-  background-color: #e15d05;
+  border: 1px solid var(--border-dark-15);
+  background-color: var(--accent-color);
   color: var(--white);
   cursor: pointer;
   transition: background-color var(--transition), color var(--transition),
@@ -156,19 +156,19 @@
 
 .hero-slider-btn:hover:not(:disabled),
 .hero-slider-btn:focus-visible:not(:disabled) {
-  background-color: #fceee6;
-  color: #0b0500;
+  background-color: var(--bg-main);
+  color: var(--text-main);
 }
 
 .hero-slider-btn:active:not(:disabled) {
-  background-color: #5a2502;
+  background-color: var(--accent-dark);
   color: var(--white);
 }
 
 .hero-slider-btn:disabled,
 .hero-slider-btn.swiper-button-disabled {
-  background-color: #e15d05;
-  color: #0b0500;
+  background-color: var(--accent-color);
+  color: var(--text-main);
   opacity: 0.2;
   cursor: not-allowed;
   pointer-events: none;
