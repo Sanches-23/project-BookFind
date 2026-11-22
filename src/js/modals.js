@@ -6,6 +6,8 @@ import { getBookById } from './books-api.js';
 const MIN_QUANTITY = 1;
 const MAX_QUANTITY = 99;
 const DEFAULT_DESCRIPTION = 'No description available for this book.';
+const PLACEHOLDER_IMG =
+  'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
 
 const modalBackdrop = document.querySelector('#book-modal');
 const modalCloseBtn = modalBackdrop?.querySelector('.book-modal-close');
@@ -54,7 +56,7 @@ function populateBookModal(book) {
   currentBook = book;
 
   if (modalImg) {
-    modalImg.src = book.book_image || '';
+    modalImg.src = book.book_image || PLACEHOLDER_IMG;
     modalImg.alt = book.title || 'Book cover';
   }
 
