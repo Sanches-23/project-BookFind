@@ -136,17 +136,13 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .footer-info {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
   .footer-nav-list {
     flex-direction: row;
   }
 
-  .footer-form-input {
-    max-width: 480px;
+  .footer-subscribe {
+    width: 404px;
+    align-self: center;
   }
 }
 
@@ -162,7 +158,8 @@
     align-items: flex-start;
   }
 
-  .footer-subscribe {
+    .footer-subscribe {
     width: 404px;
+    align-self: auto;
   }
 }
