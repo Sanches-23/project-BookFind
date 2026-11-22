@@ -104,15 +104,15 @@
 }
 
 .hero-cta-link:hover,
-.hero-cta-link:focus-visible {
+.hero-cta-link:focus {
   background-color: var(--color-text);
   border-color: var(--color-text);
   color: var(--white);
 }
 
 .hero-cta-link:active {
-  background-color: var(--color-btn-active-dark);
-  border-color: var(--color-btn-active-dark);
+  background-color: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
   color: var(--white);
 }
 
