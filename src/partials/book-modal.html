@@ -1,4 +1,152 @@
-<div class="is-hidden" id="book-modal">
-  <h3>book-modal</h3>
+<div
+  class="book-modal-backdrop is-hidden"
+  id="book-modal"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="book-modal-title"
+>
+  <div class="book-modal-window">
+    <button class="book-modal-close" type="button" aria-label="Close modal">
+      <svg class="book-modal-close-icon" width="32" height="32" aria-hidden="true">
+        <use href="./images/icons.svg#x"></use>
+      </svg>
+    </button>
 
+    <div class="book-modal-content">
+      <div class="book-modal-media">
+        <img
+          class="book-modal-img"
+          src=""
+          alt=""
+          width="309"
+          height="467"
+        />
+      </div>
+
+      <div class="book-modal-info">
+        <div class="book-modal-details-top">
+          <div class="book-modal-header">
+            <h2 class="book-modal-title" id="book-modal-title"></h2>
+            <p class="book-modal-author"></p>
+            <p class="book-modal-price"></p>
+          </div>
+
+          <form class="book-modal-form" novalidate>
+            <div class="book-modal-qty">
+              <button
+                class="book-modal-qty-btn"
+                type="button"
+                data-action="decrement"
+                aria-label="Decrease quantity"
+              >
+                -
+              </button>
+              <input
+                class="book-modal-qty-input"
+                type="number"
+                name="quantity"
+                value="1"
+                min="1"
+                max="99"
+                aria-label="Book quantity"
+              />
+              <button
+                class="book-modal-qty-btn"
+                type="button"
+                data-action="increment"
+                aria-label="Increase quantity"
+              >
+                +
+              </button>
+            </div>
+
+            <div class="book-modal-actions">
+              <button
+                class="book-modal-btn book-modal-btn--primary"
+                type="button"
+                data-action="add-to-cart"
+              >
+                Add To Cart
+              </button>
+              <button
+                class="book-modal-btn book-modal-btn--secondary"
+                type="submit"
+              >
+                Buy Now
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="book-modal-accordion accordion-container">
+          <div class="ac book-modal-ac">
+            <h3 class="ac-header">
+              <button type="button" class="ac-trigger book-modal-ac-trigger">
+                <span>Details</span>
+                <svg
+                  class="book-modal-ac-icon"
+                  width="24"
+                  height="24"
+                  aria-hidden="true"
+                >
+                  <use href="./images/icons.svg#chevron-down"></use>
+                </svg>
+              </button>
+            </h3>
+            <div class="ac-panel">
+              <p class="ac-text book-modal-ac-text" data-accordion-details></p>
+            </div>
+          </div>
+
+          <div class="ac book-modal-ac">
+            <h3 class="ac-header">
+              <button type="button" class="ac-trigger book-modal-ac-trigger">
+                <span>Shipping</span>
+                <svg
+                  class="book-modal-ac-icon"
+                  width="24"
+                  height="24"
+                  aria-hidden="true"
+                >
+                  <use href="./images/icons.svg#chevron-down"></use>
+                </svg>
+              </button>
+            </h3>
+            <div class="ac-panel">
+              <p class="ac-text book-modal-ac-text" data-accordion-shipping>
+                We ship across the United States within 2–5 business days. All
+                orders are processed through USPS or a reliable courier service.
+                Enjoy free standard shipping on orders over $50.
+              </p>
+            </div>
+          </div>
+
+          <div class="ac book-modal-ac">
+            <h3 class="ac-header">
+              <button type="button" class="ac-trigger book-modal-ac-trigger">
+                <span>Returns</span>
+                <svg
+                  class="book-modal-ac-icon"
+                  width="24"
+                  height="24"
+                  aria-hidden="true"
+                >
+                  <use href="./images/icons.svg#chevron-down"></use>
+                </svg>
+              </button>
+            </h3>
+            <div class="ac-panel">
+              <p class="ac-text book-modal-ac-text" data-accordion-returns>
+                You can return an item within 14 days of receiving your order,
+                provided it hasn&rsquo;t been used and is in its original
+                condition. To start a return, please contact our support team —
+                we&rsquo;ll guide you through the process quickly and
+                hassle-free.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
