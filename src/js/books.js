@@ -1,4 +1,4 @@
-import { getTopBooks, getBooksByCategory, getCategories } from './books-api.js';
+import { getBooks, getBooksByCategory, getCategories } from './books-api.js';
 import { loadMoreBooks, refs, renderBooks, renderCategories, toggleLoadMore, updateCounter } from './books-render.js';
 import { BOOKS_PER_LOAD, BOOKS_PER_PAGE, DESKTOP_QUERY } from './constants.js';
 import iziToast from 'izitoast';
@@ -14,7 +14,7 @@ function getBooksLimit() {
 }
 
 async function getAllBooks() {
-  const topBooks = await getTopBooks();
+  const topBooks = await getBooks();
   const allBooks = [];
   for (const category of topBooks) {
     for (const book of category.books) {

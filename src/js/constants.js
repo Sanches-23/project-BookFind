@@ -1,5 +1,4 @@
-// глобальні змінні типу юрл, к-сть книжок на сторінку і тд
-export const API_BASE_URL = 'https://books-backend.p.goit.global';
+export const API_BASE_URL = 'https://books-backend-v2.b.goit.study';
 export const ENDPOINTS = {
   TOP_BOOKS: '/books/top-books',
   CATEGORIES: '/books/category-list',
