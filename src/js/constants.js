@@ -11,5 +11,5 @@ export const TABLET_QUERY = '(min-width: 768px)';
 export const BOOKS_PER_LOAD = 4;
 export const BOOKS_PER_PAGE = {
   MOBILE: 10,
-  DESKTOP: 24,
+  TABLET_UP: 24,
 };
