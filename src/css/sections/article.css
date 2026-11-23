@@ -1,5 +1,6 @@
 .article {
-padding: 64px 16px;
+padding-top: 64px;
+padding-bottom: 64px;
 }
 .article-header {
     margin-bottom: 24px;
@@ -18,9 +19,6 @@ padding: 64px 16px;
 }
 
 @media (min-width: 768px) {
-.article {
-        padding: 64px 32px;
-    }
 .article-image {
     width: 704px;
     height: 474px;
@@ -35,7 +33,7 @@ padding: 64px 16px;
         align-items: center;
         gap: 32px;
     }
-    
+
 .article-image {
     width: 640px;
     height: 474px;
