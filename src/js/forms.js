@@ -8,7 +8,7 @@ const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 contactForm.addEventListener('submit', handleSubmit);
 
 function toggleError(input, hasError) {
-  input.closest('.form-field').classList.toggle('is-error', hasError);
+  input.closest('.contact-form-field').classList.toggle('is-error', hasError);
 }
 
 function handleSubmit(event) {

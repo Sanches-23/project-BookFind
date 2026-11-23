@@ -1,6 +1,6 @@
 const contactBackdrop = document.querySelector('#contact-modal');
 const contactCloseBtn = contactBackdrop.querySelector('.modal-close');
-const contactEventTitle = contactBackdrop.querySelector('.modal-event');
+const contactEventTitle = contactBackdrop.querySelector('.contact-modal-event');
 
 function openContactModal(eventTitle) {
   if (eventTitle) {
