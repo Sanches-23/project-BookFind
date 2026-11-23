@@ -4,3 +4,4 @@ import './js/sliders.js';
 import './js/feedback.js';
 import './js/forms.js';
 import './js/modals.js';
+import './js/footer.js';

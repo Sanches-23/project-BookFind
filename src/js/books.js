@@ -1,5 +1,13 @@
 import { getBooks, getBooksByCategory, getCategories } from './books-api.js';
-import { loadMoreBooks, refs, renderBooks, renderCategories, toggleLoadMore, updateCounter } from './books-render.js';
+import {
+  loadMoreBooks,
+  refs,
+  renderBooks,
+  renderCategories,
+  setActiveCategory,
+  toggleLoadMore,
+  updateCounter,
+} from './books-render.js';
 import { BOOKS_PER_LOAD, BOOKS_PER_PAGE, TABLET_QUERY } from './constants.js';
 import iziToast from 'izitoast';
 
@@ -7,9 +15,33 @@ const ALL_CATEGORIES = 'All categories';
 let currentBooks = [];
 let shownCount = 0;
 
+function openCategories() {
+  refs.categories.classList.add('is-open');
+  refs.categoriesToggle.setAttribute('aria-expanded', 'true');
+  document.addEventListener('click', onOutsideClick);
+}
+
+function closeCategories() {
+  refs.categories.classList.remove('is-open');
+  refs.categoriesToggle.setAttribute('aria-expanded', 'false');
+  document.removeEventListener('click', onOutsideClick);
+}
+
+function toggleCategories() {
+  refs.categories.classList.contains('is-open')
+    ? closeCategories()
+    : openCategories();
+}
+
+function onOutsideClick(e) {
+  if (!refs.categories.contains(e.target)) {
+    closeCategories();
+  }
+}
+
 function getBooksLimit() {
   return window.matchMedia(TABLET_QUERY).matches
-    ? BOOKS_PER_PAGE.DESKTOP
+    ? BOOKS_PER_PAGE.TABLET_UP
     : BOOKS_PER_PAGE.MOBILE;
 }
 
@@ -43,9 +75,11 @@ function updateBooksInfo() {
   updateCounter(shownCount, currentBooks.length);
 }
 
-export async function categoryHandler(e) {
+async function categoryHandler(e) {
   const targetButton = e.target.closest('.categories-btn');
   if (!targetButton) return;
+  closeCategories();
+  setActiveCategory(targetButton);
   const category = e.target.textContent.trim();
   try {
     if (category === ALL_CATEGORIES) {
@@ -66,6 +100,7 @@ export async function categoryHandler(e) {
 async function initBooks() {
   refs.booksLoadMore.addEventListener('click', showMoreBooks);
   refs.categoriesList.addEventListener('click', categoryHandler);
+  refs.categoriesToggle.addEventListener('click', toggleCategories);
   try {
     const [categories, books] = await Promise.all([
       getCategories(),
