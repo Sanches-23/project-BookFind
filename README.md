@@ -34,7 +34,7 @@ Requirements: Node.js LTS.
 npm install      # install dependencies
 npm run dev      # start dev server at http://localhost:5173
 npm run build    # production build into /dist
-npm run preview  # preview the production build  at http://localhost:4173
+npm run preview  # preview the production build at http://localhost:4173
 ```
 
 ## Deployment
@@ -54,7 +54,21 @@ src/
 
 ## Team
 
+- **Oleksandr Pasichnyk** — Team Lead: project setup and structure, Books section
+  (markup, category filter, styles)
+- **Max Didyk** — Scrum Master, Feedbacks section
+- **Evhen** — Header and mobile menu
+- **Sway-Nick** — Hero section, Book Modal
+- **Pavlo** — Events section
+- **Andrii Pankiv** — Article section, Books API, SVG sprite and content images
+- **Viktoriia Kozlovska** — Location section, Contact Modal
+- **Alina Honcharuk** — Footer
 
+## Additional features (optional)
+
+- **?** Loader for API requests
+- **?** Scroll-to-top button
+- **?** Shopping list with pagination
 
 ## Design
 
