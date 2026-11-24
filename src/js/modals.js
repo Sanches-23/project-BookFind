@@ -70,6 +70,15 @@ const booksList = document.querySelector('.books-list');
 let currentBook = null;
 let bookAccordion = null;
 
+function formatBookTitle(title) {
+  const trimmed = title?.trim();
+  if (!trimmed) {
+    return 'Untitled';
+  }
+  const lower = trimmed.toLowerCase();
+  return lower.charAt(0).toUpperCase() + lower.slice(1);
+}
+
 function formatPrice(price) {
   const numericPrice = Number(price);
   if (!Number.isFinite(numericPrice) || numericPrice <= 0) {
@@ -94,15 +103,16 @@ function setQuantity(value) {
 }
 
 function populateBookModal(book) {
-  currentBook = book;
+  const formattedTitle = formatBookTitle(book.title);
+  currentBook = { ...book, title: formattedTitle };
 
   if (modalImg) {
     modalImg.src = book.book_image || PLACEHOLDER_IMG;
-    modalImg.alt = book.title || 'Book cover';
+    modalImg.alt = formattedTitle;
   }
 
   if (modalTitle) {
-    modalTitle.textContent = book.title || 'Untitled';
+    modalTitle.textContent = formattedTitle;
   }
 
   if (modalAuthor) {
