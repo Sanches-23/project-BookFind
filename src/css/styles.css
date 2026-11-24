@@ -3,12 +3,10 @@
 @import url('base/variables.css');
 @import url('base/base.css');
 @import url('utils/container.css');
-@import url('utils/animations.css');
 @import url('utils/loader.css');
 @import 'izitoast/dist/css/iziToast.min.css';
 @import url('utils/iziToast-custom.css');
 
-@import url('components/button.css');
 @import url('components/modal.css');
 
 /* Sections style */

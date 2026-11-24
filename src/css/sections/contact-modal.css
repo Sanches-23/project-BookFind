@@ -10,6 +10,16 @@
   padding: 64px 16px;
 }
 
+.contact-modal .modal-close {
+  color: var(--color-text);
+  transition: color var(--transition);
+}
+
+.contact-modal .modal-close:hover,
+.contact-modal .modal-close:focus {
+  color: var(--color-accent);
+}
+
 .contact-modal-title {
   font-size: 48px;
   font-weight: 600;
