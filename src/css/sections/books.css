@@ -299,6 +299,17 @@
   .categories-btn {
     padding: 8px 0;
     font-size: 18px;
+    transition: color var(--transition);
+  }
+
+  .categories-btn:hover,
+  .categories-btn:focus {
+    color: var(--color-accent-light);
+  }
+
+  .categories-btn.is-active {
+    color: var(--color-accent-dark);
+    -webkit-text-stroke: 0.5px currentColor;
   }
 
   .categories-btn:hover,
