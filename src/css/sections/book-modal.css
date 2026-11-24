@@ -1,17 +1,8 @@
-body.modal-open {
-  overflow: hidden;
-}
-
 .book-modal-backdrop {
-  position: fixed;
-  inset: 0;
   z-index: 10000;
-  display: flex;
   align-items: flex-start;
   justify-content: center;
   padding: 32px 16px;
-  overflow-y: auto;
-  background-color: color-mix(in srgb, var(--black) 25%, transparent);
 }
 
 .book-modal-backdrop.is-hidden {
@@ -19,40 +10,18 @@ body.modal-open {
 }
 
 .book-modal-window {
-  position: relative;
-  margin: auto;
-  width: 100%;
   max-width: 343px;
   padding: 64px 16px;
-  border-radius: 16px;
-  background-color: var(--color-bg);
 }
 
 .book-modal-close {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  padding: 0;
-  border: none;
-  background-color: transparent;
   color: var(--color-text);
-  cursor: pointer;
   transition: color var(--transition);
 }
 
 .book-modal-close:hover,
 .book-modal-close:focus {
   color: var(--color-accent);
-}
-
-.book-modal-close-icon {
-  display: block;
-  fill: currentColor;
 }
 
 .book-modal-content {

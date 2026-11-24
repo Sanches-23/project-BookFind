@@ -134,7 +134,7 @@ async function openBookModal(bookId) {
     populateBookModal(book);
 
     modalBackdrop.classList.remove('is-hidden');
-    document.body.classList.add('modal-open');
+    document.body.style.overflow = 'hidden';
     window.addEventListener('keydown', handleBookModalEscape);
 
     if (bookAccordion) {
@@ -153,7 +153,7 @@ function closeBookModal() {
   if (!modalBackdrop || modalBackdrop.classList.contains('is-hidden')) return;
 
   modalBackdrop.classList.add('is-hidden');
-  document.body.classList.remove('modal-open');
+  document.body.style.overflow = '';
   window.removeEventListener('keydown', handleBookModalEscape);
 }
 
