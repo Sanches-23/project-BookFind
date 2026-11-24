@@ -146,7 +146,7 @@ refs.addToCartBtn.addEventListener('click', () => {
 refs.form.addEventListener('submit', event => {
   event.preventDefault();
   iziToast.success({
-    message: 'Thank you for your purchase!',
+    message: 'Дякуємо за покупку',
     position: 'topRight',
   });
   closeBookModal();
