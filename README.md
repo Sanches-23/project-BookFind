@@ -24,7 +24,7 @@ Booksy helps readers discover books and stay in touch with the bookstore communi
 - [Accordion JS](https://github.com/michu2k/Accordion) — accordion in the book modal
 - [modern-normalize](https://cdnjs.com/libraries/modern-normalize)
 
-Books data: `https://books-backend-v2.b.goit.study/api-docs/`
+Books data: <https://books-backend-v2.b.goit.study/api-docs/>
 
 ## Getting started
 
