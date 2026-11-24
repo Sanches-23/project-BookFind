@@ -1,0 +1,59 @@
+.scroll-up-btn {
+    position: fixed;
+    z-index: 100;
+    right: 16px;
+    bottom: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    border: 2px solid var(--color-text);
+    border-radius: 50%;
+    background-color: transparent;
+    color: var(--color-text);
+
+    cursor: pointer;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: var(--transition);
+}
+
+.scroll-up-btn.is-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.scroll-up-btn:hover {
+    background-color: var(--color-accent);
+    transform: translateY(-3px);
+}
+
+.scroll-up-btn:focus-visible {
+    outline: 2px solid var(--color-accent);
+}
+
+@media screen and (min-width: 768px) {
+    .scroll-up-btn {
+        right: 24px;
+        bottom: 24px;
+        width: 48px;
+        height: 48px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .scroll-up-btn {
+        right: 32px;
+        bottom: 32px;
+        width: 52px;
+        height: 52px;
+    }
+}
