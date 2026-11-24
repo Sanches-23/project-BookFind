@@ -1,9 +1,131 @@
 .feedbacks {
-
+  padding: 96px 0;
 }
 
+.feedbacks h2 {
+  margin: 0 0 16px;
+  font-size: 36px;
+}
 
+.feedbacks .container > p {
+  margin: 0 0 56px;
+  font-size: 18px;
+}
 
+/* картки */
+.feedback-swiper .swiper-slide {
+  height: auto;
+}
 
+.feedback-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px 16px 32px;
+  border: 1px solid #e8cfc4;
+  border-radius: 12px;
+}
 
+.feedback-text {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.43;
+}
 
+.feedback-author {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 24px 0 0;
+}
+
+.feedback-avatar {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.feedback-name {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.feedback-role {
+  margin: 0;
+  font-size: 16px;
+}
+
+/* керування */
+.feedback-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.feedback-pagination {
+  display: flex;
+  gap: 4px;
+}
+
+.feedback-pagination .swiper-pagination-bullet {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-text);
+  opacity: 0.2;
+}
+
+.feedback-pagination .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+.feedback-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+  padding-top:32px;
+}
+
+.feedback-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  border: 1px solid color-mix(in srgb, var(--color-text) 15%, transparent);
+  background-color: var(--color-accent);
+  color: var(--white);
+  cursor: pointer;
+  transition:
+    background-color var(--transition),
+    color var(--transition),
+    opacity var(--transition);
+}
+
+.feedback-btn:hover:not(:disabled),
+.feedback-btn:focus-visible:not(:disabled) {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.feedback-btn:active:not(:disabled) {
+  background-color: var(--color-btn-active-dark);
+  color: var(--white);
+}
+
+.feedback-btn:disabled,
+.feedback-btn.is-disabled {
+  background-color: var(--color-accent);
+  color: var(--color-text);
+  opacity: 0.2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.feedback-icon {
+  display: block;
+  flex-shrink: 0;
+  fill: currentColor;
+}
