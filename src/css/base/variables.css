@@ -21,4 +21,5 @@
   --color-text-15: color-mix(in srgb, var(--color-text) 15%, transparent);
 
   --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-modal: 300ms cubic-bezier(0.9, 1, 0.3, 1);
 }

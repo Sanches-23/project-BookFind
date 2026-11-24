@@ -11,8 +11,14 @@
 }
 html {
   scroll-behavior: smooth;
+  scrollbar-gutter: stable;
 }
 /* smooth-scroll при нитисканні на якірні посилання */
+
+html:has(.backdrop:not(.is-hidden)) {
+  background-color: color-mix(in srgb, var(--color-bg) 75%, black);
+}
+
 body {
   display: flex;
   flex-direction: column;
