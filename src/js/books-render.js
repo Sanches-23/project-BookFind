@@ -4,25 +4,51 @@ export const refs = {
   booksLoadMore: document.querySelector('.books-more-btn'),
   booksShown: document.querySelector('.books-count-current'),
   booksTotal: document.querySelector('.books-count-total'),
-}
+  categories: document.querySelector('.categories'),
+  categoriesToggle: document.querySelector('.categories-toggle'),
+};
 
 function categoryTemplate(name) {
   return `
   <li class="categories-item">
-    <button class="categories-btn" type="button" data-category="${name}">
-      ${name}
-    </button>
+    <button class="categories-btn" type="button">${name}</button>
   </li>`;
 }
 
 export function renderCategories(names) {
   refs.categoriesList.innerHTML = names.map(categoryTemplate).join('');
+  setActiveCategory(refs.categoriesList.querySelector('.categories-btn'));
 }
 
-function bookTemplate({ _id: id,  title }) {
+export function setActiveCategory(button) {
+  const activeButton = refs.categoriesList.querySelector('.is-active');
+  if (activeButton) {
+    activeButton.classList.remove('is-active');
+    activeButton.removeAttribute('aria-current');
+  }
+  button.classList.add('is-active');
+  button.setAttribute('aria-current', 'true');
+}
+
+function bookTemplate({ _id: id, title, author, price, book_image }) {
   return `
-  <li class="books-item" data-id="${id}">
-    <p class="books-item-title">${title}</p>
+  <li class="books-item">
+    <img
+      class="books-item-img"
+      src="${book_image}"
+      alt="${title} by ${author}"
+      width="343"
+      height="488"
+      loading="lazy"
+    />
+    <div class="books-item-info">
+      <div class="books-item-text">
+        <h4 class="books-item-title">${title.toLowerCase()}</h4>
+        <p class="books-item-author">${author}</p>
+      </div>
+      <p class="books-item-price">$${Math.round(price)}</p>
+    </div>
+    <button class="books-item-btn" type="button" data-id="${id}">Learn More</button>
  </li>`;
 }
 

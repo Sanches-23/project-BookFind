@@ -1,2 +1,36 @@
-/*було б непогано прописати тут спільні стилі для всіх модалок,
- а в тематичних файлах вже редагувати при змінах*/
+/* Спільні стилі для всіх модалок (Contact Modal, Book Modal) */
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.modal {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  border-radius: 16px;
+  background-color: var(--color-bg);
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.modal-close-icon {
+  fill: currentColor;
+}

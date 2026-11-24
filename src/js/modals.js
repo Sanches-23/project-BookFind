@@ -3,6 +3,49 @@ import 'accordion-js/accordion.min.css';
 import iziToast from 'izitoast';
 import { getBookById } from './books-api.js';
 
+/* ===================== Contact Modal ===================== */
+const contactBackdrop = document.querySelector('#contact-modal');
+const contactCloseBtn = contactBackdrop?.querySelector('.modal-close');
+const contactEventTitle = contactBackdrop?.querySelector('.contact-modal-event');
+
+function openContactModal(eventTitle) {
+  if (!contactBackdrop) return;
+  if (eventTitle && contactEventTitle) {
+    contactEventTitle.textContent = eventTitle;
+  }
+
+  contactBackdrop.classList.remove('is-hidden');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeContactModal() {
+  if (!contactBackdrop) return;
+  contactBackdrop.classList.add('is-hidden');
+  document.body.style.overflow = '';
+}
+
+if (contactCloseBtn) {
+  contactCloseBtn.addEventListener('click', closeContactModal);
+}
+
+if (contactBackdrop) {
+  contactBackdrop.addEventListener('click', event => {
+    if (event.target === contactBackdrop) {
+      closeContactModal();
+    }
+  });
+}
+
+document.addEventListener('keydown', event => {
+  if (!contactBackdrop) return;
+  const isOpen = !contactBackdrop.classList.contains('is-hidden');
+
+  if (event.key === 'Escape' && isOpen) {
+    closeContactModal();
+  }
+});
+
+/* ===================== Book Modal ===================== */
 const MIN_QUANTITY = 1;
 const MAX_QUANTITY = 99;
 const DEFAULT_DESCRIPTION = 'No description available for this book.';
@@ -32,9 +75,7 @@ function formatPrice(price) {
   if (!Number.isFinite(numericPrice) || numericPrice <= 0) {
     return '$0';
   }
-  return Number.isInteger(numericPrice)
-    ? `$${numericPrice}`
-    : `$${numericPrice.toFixed(2)}`;
+  return `$${Math.round(numericPrice)}`;
 }
 
 function getSafeQuantity() {
@@ -79,13 +120,13 @@ function populateBookModal(book) {
   setQuantity(MIN_QUANTITY);
 }
 
-function handleEscapeKey(event) {
+function handleBookModalEscape(event) {
   if (event.key === 'Escape') {
     closeBookModal();
   }
 }
 
-export async function openBookModal(bookId) {
+async function openBookModal(bookId) {
   if (!modalBackdrop || !bookId) return;
 
   try {
@@ -94,7 +135,7 @@ export async function openBookModal(bookId) {
 
     modalBackdrop.classList.remove('is-hidden');
     document.body.classList.add('modal-open');
-    window.addEventListener('keydown', handleEscapeKey);
+    window.addEventListener('keydown', handleBookModalEscape);
 
     if (bookAccordion) {
       bookAccordion.closeAll();
@@ -108,12 +149,12 @@ export async function openBookModal(bookId) {
   }
 }
 
-export function closeBookModal() {
+function closeBookModal() {
   if (!modalBackdrop || modalBackdrop.classList.contains('is-hidden')) return;
 
   modalBackdrop.classList.add('is-hidden');
   document.body.classList.remove('modal-open');
-  window.removeEventListener('keydown', handleEscapeKey);
+  window.removeEventListener('keydown', handleBookModalEscape);
 }
 
 if (accordionContainer) {
@@ -177,17 +218,14 @@ if (modalForm) {
 
 if (booksList) {
   booksList.addEventListener('click', event => {
-    const bookItem = event.target.closest('.books-item[data-id]');
-    if (!bookItem) return;
+    const learnMoreBtn = event.target.closest('.books-item-btn[data-id]');
+    if (!learnMoreBtn) return;
 
-    const hasLearnMoreButton = Boolean(bookItem.querySelector('button'));
-    if (hasLearnMoreButton && !event.target.closest('button')) {
-      return;
-    }
-
-    const { id } = bookItem.dataset;
+    const { id } = learnMoreBtn.dataset;
     if (id) {
       openBookModal(id);
     }
   });
 }
+
+export { openContactModal, closeContactModal, openBookModal, closeBookModal };

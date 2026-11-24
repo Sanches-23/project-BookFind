@@ -1,18 +1,26 @@
 <section class="books" id="books">
-  <div class="container">
+  <div class="container books-container">
     <h2 class="books-title visually-hidden">Trending books</h2>
-    <div class="categories-list-wrapper">
-      <h3 class="books-subtitle">Books</h3>
-      <p class="books-count" aria-live="polite">
-        Showing <span class="books-count-current">0</span> of<span
-        class="books-count-total">0</span>
-      </p>
-      <ul class="categories-list">
-      </ul>
+    <div class="books-header">
+      <div class="categories-list-wrapper">
+        <h3 class="books-subtitle">Books</h3>
+        <p class="books-count" aria-live="polite">
+          Showing <span class="books-count-current">0</span> of <span
+          class="books-count-total">0</span>
+        </p>
+      </div>
+      <div class="categories">
+        <button class="categories-toggle" type="button" aria-expanded="false">
+          Categories
+          <svg class="categories-toggle-icon" width="24" height="24" aria-hidden="true">
+            <use href="./images/icons.svg#chevron-down"></use>
+          </svg>
+        </button>
+        <ul class="categories-list"></ul>
+      </div>
     </div>
     <div class="books-list-wrapper">
-      <ul class="books-list">
-      </ul>
+      <ul class="books-list"></ul>
       <button class="books-more-btn is-hidden" type="button">Show More</button>
     </div>
   </div>

@@ -1,9 +1,141 @@
-.contact-modal {
-
+.contact-backdrop {
+  padding: 64px 16px;
 }
 
+.contact-modal {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  max-width: 343px;
+  padding: 64px 16px;
+}
 
+.contact-modal-title {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-align: center;
+}
 
+.contact-modal-event {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  text-align: center;
+  margin-top: -32px;
+}
 
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
 
+.contact-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
 
+.contact-form-label {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.contact-form-input {
+  padding: 8px 12px;
+  border: 1px solid rgba(11, 5, 0, 0.15);
+  border-radius: 4px;
+  background-color: var(--color-input-bg);
+  outline: none;
+  transition: border-color var(--transition);
+  color: inherit;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.contact-form-input:focus {
+  border-color: var(--color-accent);
+}
+
+.contact-form-input::placeholder {
+  color: rgba(11, 5, 0, 0.6);
+}
+
+.contact-form-input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px
+    color-mix(in srgb, var(--color-text) 5%, var(--color-bg)) inset;
+  -webkit-text-fill-color: var(--color-text);
+}
+
+.contact-form-textarea {
+  height: 180px;
+  padding: 12px;
+  resize: none;
+}
+
+.contact-form-error {
+  display: none;
+  margin-top: -4px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--color-error);
+}
+
+.contact-form-field.is-error .contact-form-error {
+  display: block;
+}
+
+.contact-form-field.is-error .contact-form-input {
+  border-color: var(--color-error);
+  color: var(--color-error);
+}
+
+.contact-form-btn {
+  padding: 12px 24px;
+  border: 1px solid var(--color-accent);
+  border-radius: 4px;
+  color: var(--white);
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: var(--color-accent);
+  transition:
+    background-color var(--transition),
+    border-color var(--transition);
+}
+
+.contact-form-btn:hover,
+.contact-form-btn:focus {
+  background-color: var(--color-text);
+  border-color: var(--color-text);
+}
+
+.contact-form-btn:active {
+  background-color: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+}
+
+@media (min-width: 768px) {
+  .contact-backdrop {
+    padding: 64px 32px;
+  }
+
+  .contact-modal {
+    max-width: 704px;
+    padding: 64px 32px;
+  }
+
+  .contact-form-btn {
+    width: 342px;
+    align-self: center;
+  }
+}
+
+@media (min-width: 1440px) {
+  .contact-modal {
+    max-width: 866px;
+    padding: 64px;
+  }
+}
