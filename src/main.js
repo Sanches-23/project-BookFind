@@ -4,4 +4,5 @@ import './js/sliders.js';
 import './js/events.js';
 import './js/forms.js';
 import './js/modals.js';
+import './js/book-modal.js';
 import './js/footer.js';
