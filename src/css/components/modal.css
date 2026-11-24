@@ -1,12 +1,19 @@
-/* Спільні стилі для всіх модалок (Contact Modal, Book Modal) */
-
 .backdrop {
   position: fixed;
   inset: 0;
-  z-index: 100;
+  z-index: 1000;
   display: flex;
   overflow-y: auto;
   background-color: rgba(0, 0, 0, 0.25);
+  transition: opacity var(--transition-modal),
+  visibility var(--transition-modal);
+}
+
+.backdrop.is-hidden {
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .modal {
@@ -15,6 +22,11 @@
   margin: auto;
   border-radius: 16px;
   background-color: var(--color-bg);
+  transition: transform var(--transition-modal);
+}
+
+.backdrop.is-hidden .modal {
+  transform: translateY(20px);
 }
 
 .modal-close {
