@@ -1,7 +1,7 @@
 /* ======= Мобільна версія (базові стилі) ======= */
 
 .header {
-  background-color: #fceee6;
+  background-color: var(--color-bg);
   position: fixed;
   top: 0;
   left: 0;
@@ -64,7 +64,7 @@
 }
 
 .burger-icon {
-  fill: currentColor;
+  fill: var(--color-text);
   display: block;
 }
 
@@ -96,7 +96,7 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 1.5;
-    color: #0b0500;
+    color: var(--color-text);
     transition: color var(--transition);
   }
 
@@ -122,11 +122,7 @@
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transform: translateY(-20px);
-  transition:
-    opacity 0.3s ease,
-    transform 0.3s ease,
-    visibility 0.3s ease;
+  transition: var(--transition-modal);
 }
 
 /* Стан відкритого мобільного меню */
@@ -219,7 +215,7 @@
   font-weight: 500;
   font-size: 20px;
   line-height: 1.5;
-  color: #0b0500;
+  color: var(--color-text);
   transition: color var(--transition);
 }
 
