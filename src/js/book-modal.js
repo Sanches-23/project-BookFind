@@ -32,7 +32,7 @@ let currentBook = null;
 
 const bookAccordion = new Accordion(refs.accordionContainer, {
   duration: 250,
-  showMultiple: true,
+  showMultiple: false,
 });
 
 function formatBookTitle(title) {
