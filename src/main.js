@@ -8,3 +8,4 @@ import './js/modals.js';
 import './js/book-modal.js';
 import './js/footer.js';
 import './js/scroll-up.js';
+import './js/shopping-modal.js';

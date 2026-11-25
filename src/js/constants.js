@@ -13,3 +13,8 @@ export const BOOKS_PER_PAGE = {
   MOBILE: 10,
   TABLET_UP: 24,
 };
+
+export const STORAGE = {
+  SHOPPING_LIST_KEY: 'shopping-list',
+  SHOPPING_PER_PAGE: 4
+}

@@ -22,6 +22,7 @@
 @import url('sections/footer.css');
 
 /* Section-modals style */
+@import url('sections/shopping-modal.css');
 @import url('sections/book-modal.css');
 @import url('sections/contact-modal.css');
 
