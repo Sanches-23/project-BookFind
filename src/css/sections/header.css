@@ -1,8 +1,7 @@
 /* ======= Мобільна версія (базові стилі) ======= */
 
 .header {
-  background-color: #fceee6;
-  padding: 14px 0;
+  background-color: var(--color-bg);
   position: fixed;
   top: 0;
   left: 0;
@@ -14,6 +13,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 64px;
 }
 
 .header-nav {
@@ -22,6 +22,7 @@
 }
 
 .header-logo {
+  padding: 21.5px 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -50,7 +51,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
+  padding: 12px;
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -63,16 +64,15 @@
 }
 
 .burger-icon {
-  fill: currentColor;
+  fill: var(--color-text);
   display: block;
 }
 
 /* ======= Планшет і Десктоп (від 768px) ======= */
 @media (min-width: 768px) {
-  .header {
-    padding: 16px 0;
+  .header-container {
+    height: 72px;
   }
-
   /* Ховаємо кнопку бургер-меню */
   .burger-btn {
     display: none;
@@ -92,11 +92,11 @@
 
   .header-nav-link {
     display: block;
-    padding: 8px 0;
+    padding: 24px 0;
     font-weight: 400;
     font-size: 16px;
     line-height: 1.5;
-    color: #0b0500;
+    color: var(--color-text);
     transition: color var(--transition);
   }
 
@@ -122,11 +122,7 @@
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transform: translateY(-20px);
-  transition:
-    opacity 0.3s ease,
-    transform 0.3s ease,
-    visibility 0.3s ease;
+  transition: var(--transition-modal);
 }
 
 /* Стан відкритого мобільного меню */
@@ -152,10 +148,10 @@
 
 /* Верхня частина меню (логотип і кнопка закриття) */
 .mobile-menu-header {
+  height: 64px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 14px 0;
 }
 
 .mobile-menu-logo {
@@ -164,20 +160,20 @@
   justify-content: center;
   height: 100%;
   margin-left: 4px;
+  padding: 21.5px 0;
 }
 
 .mobile-menu-logo-icon {
   width: 84px;
   height: auto;
   display: block;
-  transform: translateY(7px);
 }
 
 .mobile-menu-close-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
+  padding: 12px;
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -219,7 +215,7 @@
   font-weight: 500;
   font-size: 20px;
   line-height: 1.5;
-  color: #0b0500;
+  color: var(--color-text);
   transition: color var(--transition);
 }
 

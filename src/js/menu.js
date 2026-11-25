@@ -9,6 +9,8 @@ const initMobileMenu = () => {
 
   if (!openMenuBtn || !closeMenuBtn || !mobileMenu) return;
 
+  mobileMenu.inert = true;
+
   const onKeyDown = event => {
     if (event.key === 'Escape') {
       closeMenu();
@@ -16,8 +18,8 @@ const initMobileMenu = () => {
   };
 
   const openMenu = () => {
+    mobileMenu.inert = false;
     mobileMenu.classList.add('is-open');
-    mobileMenu.setAttribute('aria-hidden', 'false');
     openMenuBtn.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
 
@@ -25,8 +27,9 @@ const initMobileMenu = () => {
   };
 
   const closeMenu = () => {
+    openMenuBtn.focus();
     mobileMenu.classList.remove('is-open');
-    mobileMenu.setAttribute('aria-hidden', 'true');
+    mobileMenu.inert = true;
     openMenuBtn.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
 
