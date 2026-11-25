@@ -2,6 +2,7 @@ import Accordion from 'accordion-js';
 import 'accordion-js/accordion.min.css';
 import iziToast from 'izitoast';
 import { getBookById } from './books-api.js';
+import { addToShoppingList } from './shopping-list-storage.js';
 
 const MIN_QUANTITY = 1;
 const MAX_QUANTITY = 99;
@@ -137,9 +138,10 @@ refs.qtyInput.addEventListener('change', () => {
 refs.addToCartBtn.addEventListener('click', () => {
   const quantity = getSafeQuantity();
   const title = currentBook?.title || 'Book';
+  addToShoppingList(currentBook, quantity);
   iziToast.info({
     message: `Added to cart: ${quantity} × "${title}"`,
-    position: 'topRight',
+    position: 'topCenter',
   });
 });
 

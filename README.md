@@ -67,8 +67,8 @@ src/
 ## Additional features (optional)
 
 - **?** Loader for API requests
-- **?** Scroll-to-top button
-- **?** Shopping list with pagination
+- **ndrii Pankiv** Scroll-to-top button
+- **Oleksandr Pasichnyk** Shopping list with pagination (modal)
 
 ## Design
 
