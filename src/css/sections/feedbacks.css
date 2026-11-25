@@ -17,7 +17,7 @@
   height: auto;
 }
 
-.feedback-item {
+.feedback-swiper .feedback-item {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
